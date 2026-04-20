@@ -11,7 +11,7 @@ export const buttonStyles = StyleSheet.create({
   },
 
   // variants
-  primary: { backgroundColor: "#4BD388" },
+  primary: { backgroundColor: "#5249EB" },
   destructive: { backgroundColor: "#E22B1B" },
 
   // directions

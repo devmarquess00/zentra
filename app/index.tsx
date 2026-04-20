@@ -1,14 +1,8 @@
-import { Card } from "@/src/components/card";
-import { Header } from "@/src/components/header";
-import { Modal } from "@/src/components/modal";
-import { Navigation } from "@/src/components/navigation";
-import { Transactions } from "@/src/components/transactions";
+import { Header } from "@/src/features/home/ui/components/Header/Header";
 import { useHome } from "@/src/hooks/home/useHome";
 
 import {
   StyleSheet,
-  Text,
-  TouchableOpacity,
   View
 } from "react-native";
 
@@ -16,33 +10,36 @@ export default function Home() {
   const { isModalOpen, toggleModal } = useHome();
 
   return (
-    <View style={styles.containerMain}>
+    <View style={{ flexDirection: "column" }}>
       <Header />
-
-      <View>
-        <Card />
-        <Transactions toggleModalDelete={toggleModal} />
-      </View>
-
-      <Navigation />
-
-      <Modal isOpen={isModalOpen}>
-        <View style={styles.containerContentModal}>
-          <View>
-            <Text style={styles.titleTextModal}>Deseja apagar?</Text>
-          </View>
-
-          <View style={styles.containerButtons}>
-            <TouchableOpacity style={styles.buttonCancel} onPress={toggleModal}>
-              <Text style={styles.buttonText}>Cancelar</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonDelete} onPress={toggleModal}>
-              <Text style={styles.buttonText}>Apagar</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </Modal>
     </View>
+    // <View style={styles.containerMain}>
+    //   <Header />
+
+    //   <View>
+    //     <Card />
+    //     <Transactions toggleModalDelete={toggleModal} />
+    //   </View>
+
+    //   <Navigation />
+
+    //   <Modal isOpen={isModalOpen}>
+    //     <View style={styles.containerContentModal}>
+    //       <View>
+    //         <Text style={styles.titleTextModal}>Deseja apagar?</Text>
+    //       </View>
+
+    //       <View style={styles.containerButtons}>
+    //         <TouchableOpacity style={styles.buttonCancel} onPress={toggleModal}>
+    //           <Text style={styles.buttonText}>Cancelar</Text>
+    //         </TouchableOpacity>
+    //         <TouchableOpacity style={styles.buttonDelete} onPress={toggleModal}>
+    //           <Text style={styles.buttonText}>Apagar</Text>
+    //         </TouchableOpacity>
+    //       </View>
+    //     </View>
+    //   </Modal>
+    // </View>
   );
 }
 
