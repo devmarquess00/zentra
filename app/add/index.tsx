@@ -2,7 +2,8 @@ import { Buttons } from "@/src/components/add/buttons";
 import { Inputs } from "@/src/components/add/inputs";
 import { Navigation } from "@/src/components/navigation";
 import { useAdd } from "@/src/hooks/add/useAdd";
-import { StyleSheet, View } from "react-native";
+import { Button } from "@/src/shared/ui/components/Button/Button";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Add() {
   const {
@@ -21,6 +22,10 @@ export default function Add() {
           buttonEntriesValue={buttonEntriesValue}
           buttonExitValue={buttonExitValue}
         />
+
+        <Button variant="destructive">
+          <Text style={{ color: "white" }}>teste doido demais</Text>
+        </Button>
 
         <Inputs />
       </View>
